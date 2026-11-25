@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRef } from 'react'
 import { starsMock } from './data/stars'
 import BottomNav from './components/BottomNav'
 import CatalogPage from './pages/CatalogPage'
@@ -7,7 +8,7 @@ import AddPage from './pages/AddPage'
 import type { Star } from './types'
 
 const api = '/api/star_list'
-const live = import.meta.env.VITE_LIVE_API === 'true'
+const live = import.meta.env.DEV || import.meta.env.VITE_LIVE_API === 'true'
 const limit = 10
 
 interface CatalogResult {
